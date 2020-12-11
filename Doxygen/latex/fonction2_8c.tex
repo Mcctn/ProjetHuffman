@@ -1,0 +1,73 @@
+\hypertarget{fonction2_8c}{}\doxysection{fonction2.\+c File Reference}
+\label{fonction2_8c}\index{fonction2.c@{fonction2.c}}
+
+
+Ahout des fonctions de la deuxième partie. ~\newline
+ fonction.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fonction2.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structelement}{element}} $\ast$ \mbox{\hyperlink{fonction2_8c_a07851e723f74d537d34298cd1e2ceadc}{liste\+\_\+occurrence}} (int n)
+\item 
+\mbox{\Hypertarget{fonction2_8c_a2b4a836ee8365157a4a97d920923d653}\label{fonction2_8c_a2b4a836ee8365157a4a97d920923d653}} 
+int {\bfseries min\+Liste} (\mbox{\hyperlink{structelement}{element}} $\ast$\mbox{\hyperlink{structelement}{liste}})
+\item 
+\mbox{\Hypertarget{fonction2_8c_a789fff5842790ed304fcf298fa8b12e5}\label{fonction2_8c_a789fff5842790ed304fcf298fa8b12e5}} 
+\mbox{\hyperlink{structelement}{element}} $\ast$ {\bfseries listeclassee} (\mbox{\hyperlink{structelement}{element}} $\ast$l)
+\item 
+\mbox{\Hypertarget{fonction2_8c_aad21e3c9082d6c5aa22ca492b430fc68}\label{fonction2_8c_aad21e3c9082d6c5aa22ca492b430fc68}} 
+\mbox{\hyperlink{struct_element}{Liste}} {\bfseries creer\+\_\+el} (int nouv\+\_\+info)
+\item 
+\mbox{\Hypertarget{fonction2_8c_a4ed8bf5082fa9b90eb7e80dd4d84bd2e}\label{fonction2_8c_a4ed8bf5082fa9b90eb7e80dd4d84bd2e}} 
+\mbox{\hyperlink{struct_element}{Liste}} {\bfseries creer\+\_\+liste} (int n)
+\item 
+\mbox{\Hypertarget{fonction2_8c_abef4721f91d7c771750fb18ad959aef8}\label{fonction2_8c_abef4721f91d7c771750fb18ad959aef8}} 
+void {\bfseries permut} (\mbox{\hyperlink{struct_element}{Element}} $\ast$a, \mbox{\hyperlink{struct_element}{Element}} $\ast$b)
+\item 
+\mbox{\Hypertarget{fonction2_8c_a12e68ebfa995429a464881bb01e3c0e9}\label{fonction2_8c_a12e68ebfa995429a464881bb01e3c0e9}} 
+void {\bfseries triliste} (\mbox{\hyperlink{struct_element}{Liste}} $\ast$liste\+\_\+occurence)
+\item 
+\mbox{\Hypertarget{fonction2_8c_a2bcee8af492b824fa2f073cb9c8a63f9}\label{fonction2_8c_a2bcee8af492b824fa2f073cb9c8a63f9}} 
+\mbox{\hyperlink{struct_noeud}{Noeud}} $\ast$ \mbox{\hyperlink{fonction2_8c_a2bcee8af492b824fa2f073cb9c8a63f9}{creer\+\_\+noeud}} (int val)
+\begin{DoxyCompactList}\small\item\em Isoler élément avec un une occurence dans un noeud. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fonction2_8c_a4bb009b7ab373ceedaacb8326c3d908a}\label{fonction2_8c_a4bb009b7ab373ceedaacb8326c3d908a}} 
+\mbox{\hyperlink{struct_noeud}{Noeud}} $\ast$ \mbox{\hyperlink{fonction2_8c_a4bb009b7ab373ceedaacb8326c3d908a}{creer\+\_\+noeud1}} (int val, \mbox{\hyperlink{structelement}{element}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Creer un noeud vide\+:valeur-\/$>$addition gauche et droite, gauche-\/$>$ occ min , droite-\/$>$ 2eme occ min. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{fonction2_8c_a2040d1222f9c8c96f98d17e3e876d9eb}\label{fonction2_8c_a2040d1222f9c8c96f98d17e3e876d9eb}} 
+void \mbox{\hyperlink{fonction2_8c_a2040d1222f9c8c96f98d17e3e876d9eb}{list\+\_\+supp\+\_\+min}} (int x, int y)
+\begin{DoxyCompactList}\small\item\em suppression des deux minimum de trilist et ajouter somme ds liste occurence \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ahout des fonctions de la deuxième partie. ~\newline
+ fonction. 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{structelement}{element}}* \mbox{\hyperlink{fonction2_8c_a07851e723f74d537d34298cd1e2ceadc}{liste\_occurrence}}();}
+\end{DoxyCode}
+
+
+\begin{DoxyAuthor}{Author}
+M\+A\+R\+T\+IN C\+O\+R\+N\+EN 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fonction2_8c_a07851e723f74d537d34298cd1e2ceadc}\label{fonction2_8c_a07851e723f74d537d34298cd1e2ceadc}} 
+\index{fonction2.c@{fonction2.c}!liste\_occurrence@{liste\_occurrence}}
+\index{liste\_occurrence@{liste\_occurrence}!fonction2.c@{fonction2.c}}
+\doxysubsubsection{\texorpdfstring{liste\_occurrence()}{liste\_occurrence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structelement}{element}}$\ast$ liste\+\_\+occurrence (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+faire une liste de toutes les occurences. \begin{DoxyReturn}{Returns}
+le nb occ 
+\end{DoxyReturn}
