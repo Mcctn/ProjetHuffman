@@ -1,9 +1,22 @@
+/*****************************************************************//**
+ * \file   fonction.c
+ * \brief  Ajout des fonctions de la partie 1.
+ * 
+ * \author MARTIN CORNEN
+ * \date   December 2020
+ *********************************************************************/
+
 //
-// Created by martin on 03/12/2020.
+//  fonction.c
+//  projet Huffman
+//
+//  Created by Camille Grislin on 10/11/2020.
+//  Copyright © 2020 Camille Grislin. All rights reserved.
 //
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <stdlib.h>
 #include "fonction.h"
 
@@ -11,64 +24,35 @@
 int nb_caractere_fichier_txt(int argc, char * argv[]) {
 
     int compteur = 0;
-    FILE * file = NULL ;
+    FILE * file;
 
-
+/* ouverture du fichier */
     if ((file = fopen("Alice.txt", "r")) == NULL){
         printf("Erreur a l'ouverture du fichier");
     }
     else {
-
+// parcours du fichier
         while(fgetc(file) != EOF){
-            compteur ++;
-
-        }
-
-        printf("Le nombre de caracteres du fichier est de : %d\n", compteur+1);
-
-
-        fclose(file);
-
-        return compteur;
-
-    }
-}
-
-
-
-
-
-
-
-int liste_occurences(element* l, int n){
-    int c, yes;
-    char tableau [1000], lettre;
-    FILE * file = NULL;
-    file = fopen ("Alice.txt", "r");
-
-    fgets(tableau, 1000, file);
-
-
-    for (int i = 0; i<n ; i++){
-        c=0;
-        for (int j = 0; j<n; j++){
-            if (tableau[i] == tableau[j]){
-                c++;
-            }
-        }
-        lettre = tableau[i];
-        printf("l'element %c apparait %d fois! \n", lettre,c);
+            compteur ++; // incrÈmentation du compteur
     }
 
-    return 0;
+// fermeture du fichier
     fclose(file);
+
+
+    }
+    return compteur;
 }
 
 
-void printBina(char lettre, int* compteur)
+void affichercompteur(int compteur)
 {
+     printf("\n Le nombre de caracteres du fichier est de : %d\n", compteur );
+}
 
-    //printf("%d", &compteur);
+
+void afficher_binaire(char lettre, int compteur)
+{
     FILE *fichier_lecture ;
     FILE *fichier_ecriture;
 
@@ -79,16 +63,16 @@ void printBina(char lettre, int* compteur)
     int calc;
 
     fichier_lecture = fopen ("Alice.txt", "r");
-    fichier_ecriture = fopen("Output.txt", "w+");
+    fichier_ecriture = fopen("/Users/cam/Documents/TD 2 SDD/projet HUFFMAN 2.0/projet HUFFMAN 2.0/Output.txt", "w+");
 
     if (fichier_lecture==NULL){
         printf("Erreur a l'ouverture");
     }
     else {
         for (i=0; i<compteur; i++){
-            l=0;
-            calc=1000000;
-            txt=0;
+                l=0;
+                calc=1000000;
+                txt=0;
 
 
             lettre = fgetc(fichier_lecture);
@@ -96,14 +80,15 @@ void printBina(char lettre, int* compteur)
             for(j=0; deci > 0; j++)
             {
                 bin[j] = deci%2;        // la chaine bin (chaine de 8 nombre permettant la création du 8-bits) prend la valeur de deci modulo 2
-                deci = deci/2;          // division pour passer sur "le bit suivant"
-                cpt=cpt+1;            // utile pour etre sur qu on a bien 8-bits
+                deci = deci/2;         // division pour passer sur "le bit suivant"
+                cpt=cpt+1;             // utile pour etre sur qu on a bien 8-bits
             }
             for (j=cpt; j<8;j++){
-                bin[j]=0;//compléter pour qu il y ait 8-bits
+                bin[j]=0;             //compléter pour qu il y ait 8-bits
             }
+            
             for (j=cpt; j<8;j++){
-                tabx[j]=0;//compléter pour qu il y ait 8-bits
+                tabx[j]=0;
             }
 
             for (j=7;j>=0;j--){
@@ -114,8 +99,8 @@ void printBina(char lettre, int* compteur)
 
             for (j=1;j<8;j++){
 
-                txt=txt+tabx[j]*calc;
-                calc=calc/10;
+                    txt=txt+tabx[j]*calc;
+                    calc=calc/10;
 
 
             }
@@ -127,27 +112,7 @@ void printBina(char lettre, int* compteur)
 
     }
 
-
-    printf("Il y a : %d characteres",compteur); // PENSE A ENLEVER A LA FIN
     fclose(fichier_lecture);
     fclose(fichier_ecriture);
 
 }
-
-int test(int argc, char *argv[])
-{
-    FILE* fichier = NULL;
-
-    fichier = fopen("test.txt", "a+");
-
-    if (fichier != NULL)
-    {
-        fputs("S Zér0s\nComment allez-vous ?", fichier);
-        fclose(fichier);
-    }
-    else{
-        printf("erreur");
-    }
-    return 0;
-}
-
