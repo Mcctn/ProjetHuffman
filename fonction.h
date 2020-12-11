@@ -1,27 +1,26 @@
+/*****************************************************************//**
+ * \file   fonction.h
+ * \brief  Ajout du .h des fonctions de la parties 1.
+ * 
+ * \author MARTIN CORNEN
+ * \date   December 2020
+ *********************************************************************/
+
 //
-// Created by martin on 03/12/2020.
+//  fonction.h
+//  projet Huffman
+//
+//  Created by Cam's et Martin <3 on 10/11/2020.
+//  Copyright © 2020 Camille Grislin. All rights reserved.
 //
 
-#ifndef PJ3_FONCTION_H
-#define PJ3_FONCTION_H
-
-typedef struct element{
-
-    int data;
-    struct element * next;
-
-}element;
-
-typedef element* l;
+#ifndef fonction_h
+#define fonction_h
+#include <stdio.h>
+#define Taille_max 100000
 
 int nb_caractere_fichier_txt(int argc, char * argv[]);
-void IntToBin(int n, char p);
-int printBin(char a_bChar);
-void transformation_binaire(int argc, char argv);
-int liste_occurences(element *l,int n);
-void printBina(char lettre, int * compteur);
-int test(int argc, char *argv[]);
+void affichercompteur(int compteur);
+void afficher_binaire(char lettre, int compteur);
 
-
-
-#endif //PJ3_FONCTION_H
+#endif /* fonction_h */
