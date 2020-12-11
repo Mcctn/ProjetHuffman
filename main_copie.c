@@ -10,26 +10,24 @@
 #include <stdlib.h>
 #include "fonction.h"
 #include <string.h>
+#include "fonction2.h"
 
 
 
 int main(){
 
-    int argc = 0,y;
+    int argc = 0;
     char argv[1000000];
-    int  *compteur;
-    char lettre;
-    int l;
-    
-
-//    *p = tab[8];//8 bits doivent suffirent
+    int  compteur = nb_caractere_fichier_txt(argc, (char**) &argv)-1;
+    char lettre = '\0';
     int x;
-
-    printf("1-Partie 1\n");
-    printf("2-Partie 2\n");
-    printf("3-Partie 3\n");
-    printf("4-Partie 4\n");
-    printf("5-Partie 5\n");
+ 
+    
+    printf("Bonjour, quel programme voulez-vous?\n");
+    printf("1-Compteur\n");
+    printf("2-Traduction\n");
+    printf("3-Occurrence\n");
+    
     printf("\n");
 
     scanf("%d",&x);
@@ -37,30 +35,20 @@ int main(){
     switch(x)
     {
         case 1:
-            compteur = nb_caractere_fichier_txt(argc, &argv);
-            printBina( lettre, compteur);
-            return 0;
-
+            affichercompteur(compteur);
             break;
 
         case 2:
-
-            nb_caractere_fichier_txt(argc, &argv);
-
+            afficher_binaire( lettre, compteur);
             break;
-        
+            
         case 3:
-            transformation_binaire(argc, &argv);
-            return 0;
-            
-        case 4:
-            printBin1(argc, argv);
+            liste_occurrence(compteur);
             break;
             
-        case 5:
-            liste_occurences(l, 104);
-            
-            
-       
+        default :
+            printf("\nCette commande n'existe pas \n");
+            break;
     }
+    return 0;
 }
